@@ -1,0 +1,111 @@
+section
+{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background: var(--color-main-80);
+    background: var(--color-main-light-2);
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+}
+
+.login-form
+{
+    width: 450px;
+    background: #f9f9f9;
+    box-shadow: 1px 3px 6px #00000020;
+    border-radius: 30px;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form h5 {font-size: 1rem;}
+.login-form p {font-weight: 200; color: #707070; margin: .25rem 0 1.5rem 0;}
+
+.input-box
+{
+    position: relative;
+    width: 80%;
+    height: 50px;
+    border-radius: 5px;
+    background: white;
+    display: flex;
+    margin: 1.2rem;
+}
+.input-box > label
+{
+    position: absolute;
+    top:50%;
+    left: calc(15% + 5px);
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #707070;
+    transition: .3s;
+}
+.input-box > i 
+{
+    width: 15%;
+    color: #707070;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .9rem;
+}
+.input-box > i.show-password { cursor:pointer; border-top-right-radius: 5px; border-bottom-right-radius: 5px; transition: .3s;}
+.input-box > i.show-password:hover { background: var(--color-main-20); }
+.input-box > input 
+{
+    border: none;
+    outline:none;
+    background: transparent;
+    padding: 5px;
+    color: var(--color-main);
+    width: 90%;
+    font-size: 1.1rem;
+}
+
+.input-box::before,
+.input-box::after
+{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    height: 2px;
+    width: 0;
+    background: var(--color-main);
+    transition: .3s;
+}
+.input-box::before{left:50%}
+.input-box::after{right:50%}
+
+.input-box.focus::before,
+.input-box.focus::after{width: 50%;}
+.input-box.focus > label {left: 5px; top:-15px; font-size: .8rem; color: var(--color-main)}
+.input-box.focus > i {color:var(--color-main)}
+
+.login-form > label 
+{
+    font-size: .8rem;
+    font-weight: 200;
+    margin: 1rem 0 .2rem 0;
+}
+.login-form > label > button 
+{
+    background: none;
+    border:none;
+    outline:none;
+    color: #24ABF2;
+    text-decoration: underline;
+    cursor:pointer;
+    transition: .2s;
+}
+.login-form > label > button:hover{ color: #0087D1;}
+.login-form > button
+{
+    margin: 0rem 0 2rem 0;
+}
