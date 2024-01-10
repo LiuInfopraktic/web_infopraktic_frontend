@@ -6,11 +6,25 @@ section
     width: 100vw;
     background: var(--color-main-80);
     background: var(--color-main-light-2);
+    background: var(--color-main-20);
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 35% 65%;
     align-items: center;
 }
-
+.intro
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.intro img
+{
+    width: 90%;
+    height: auto;
+    transform: translate(4rem,2rem);
+}
 .login-form
 {
     width: 450px;
@@ -18,6 +32,7 @@ section
     box-shadow: 1px 3px 6px #00000020;
     border-radius: 30px;
     padding: 2rem;
+    justify-self: center;
 
     display: flex;
     flex-direction: column;
@@ -27,6 +42,18 @@ section
 .login-form h5 {font-size: 1rem;}
 .login-form p {font-weight: 200; color: #707070; margin: .25rem 0 1.5rem 0;}
 
+.login-form > label.error
+{
+    width: 80%;
+    text-align: left;
+    padding-bottom: .5rem;
+    height: 0;
+    line-height: 0;
+    color:#E43D30;
+    font-weight: 300;
+}
+.login-form > label.error.show{padding-bottom: 1rem;}
+.login-form > label.error[name='global']{padding-bottom: 0 !important;}
 .input-box
 {
     position: relative;
@@ -35,8 +62,10 @@ section
     border-radius: 5px;
     background: white;
     display: flex;
-    margin: 1.2rem;
+    margin-top: 1.4rem;
 }
+.input-box.error { border: 1px solid #E43D30 !important;}
+.input-box.error i:not(.show-password){ color: #E43D30 !important;}
 .input-box > label
 {
     position: absolute;
@@ -83,8 +112,8 @@ section
 .input-box::before{left:50%}
 .input-box::after{right:50%}
 
-.input-box.focus::before,
-.input-box.focus::after{width: 50%;}
+.input-box.focus:not(.error)::before,
+.input-box.focus:not(.error)::after{width: 50%;}
 .input-box.focus > label {left: 5px; top:-15px; font-size: .8rem; color: var(--color-main)}
 .input-box.focus > i {color:var(--color-main)}
 

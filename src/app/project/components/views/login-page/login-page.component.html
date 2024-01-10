@@ -1,21 +1,27 @@
 
 <section>
-    <div class="intro"></div>
+    <div class="intro">
+        <img src="assets/intro_svg.svg"/>
+    </div>
     <div class="login-form">
         <h5>Benvingut!</h5>
         <p>Introdueix les teves credencials.</p>
-        <div class="input-box" #input_box_1>
+        
+        <div class="input-box input-box-user" #input_box_1>
             <label>Usuari</label>
             <i class="fa-solid fa-user"></i>
             <input type="text" #input_text (focus)="inputFocus(input_box_1)" (blur)="inputBlur(input_box_1, input_text)"/>
         </div>
-        <div class="input-box" #input_box_2>
+        <label class="error" name="user"></label>
+        <div class="input-box input-box-pass" #input_box_2>
             <label>Contrassenya</label>
             <i class="fa-solid fa-lock"></i>
             <input type="password" #input_passwd (focus)="inputFocus(input_box_2)" (blur)="inputBlur(input_box_2, input_passwd)"/>
             <i class="fa-solid fa-eye-slash show-password" #btn_passwd (click)="showPassword(input_passwd, btn_passwd)"></i>
         </div>
+        <label class="error" name="pass"></label>
+        <label class="error" name="global"></label>
         <label>No tens usuari? <button>registra't</button></label>
-        <button class="primary_btn">Entrar</button>
+        <button class="primary_btn" #btn_login (click)="login(input_text.value, input_passwd.value, btn_login)">Entrar</button>
     </div>
 </section>

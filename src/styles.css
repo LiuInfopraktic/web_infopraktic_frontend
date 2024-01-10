@@ -27,6 +27,7 @@ a{text-decoration: none;}
 ***************/
 .primary_btn
 {
+    position: relative;
     border:none;
     outline:none;
     height: 50px;
@@ -38,5 +39,31 @@ a{text-decoration: none;}
     background: var(--color-main);
     transition: .2s;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.primary_btn:hover { background: var(--color-main-dark);}
+.primary_btn:not(.loading):hover { background: var(--color-main-dark);}
+.primary_btn.loading
+{
+    color: var(--color-main);
+    user-select: none;
+    pointer-events: none;
+}
+.primary_btn.loading::after
+{
+    content: '';
+    position: absolute;
+    height: 50%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 1px solid #FFFFFF20;
+    border-top: 2px solid #FFFFFF80;
+    border-left: 2px solid #FFFFFF80;
+    animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+    0%{transform: rotate(360deg);}
+    100%{transform: rotate(0deg);}
+}
