@@ -5,13 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './project/components/views/login-page/login-page.component';
 import { HttpClientModule } from '@angular/common/http';
-import { TmpComponent } from './project/components/views/tmp/tmp.component';
+import { DashboardClientComponent } from './project/components/views/dashboard-client/dashboard-client.component';
+import { HomeWorkerComponent } from './project/components/views/home-worker/home-worker.component';
+import { BenefitsBarGraphComponent } from './project/components/reusables/graphics/benefits-bar-graph/benefits-bar-graph.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    TmpComponent
+    DashboardClientComponent,
+    HomeWorkerComponent,
+    BenefitsBarGraphComponent
   ],
   imports: [
     BrowserModule,

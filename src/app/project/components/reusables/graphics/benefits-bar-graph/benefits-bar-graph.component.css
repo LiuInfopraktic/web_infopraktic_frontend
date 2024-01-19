@@ -1,0 +1,98 @@
+.graphic-box
+{
+    position: relative;
+    height: 270px;
+    width: 300px;
+    box-shadow: 1px 3px 6px #00000020;
+    border-radius: 5px;
+    padding: 60px 40px 40px 40px;
+    background: var(--color-main-20);
+    background: #f9f9f9;
+}
+.options
+{
+    position: absolute;
+    height: 30px;
+    width: calc(100% - 40px);
+    left: 20px;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0 5px;
+}
+.option
+{
+    border: 1px solid #00000020;
+    border-bottom: 2px solid #00000040;
+    height: 30px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s;
+    cursor: pointer;
+}
+.option i {color: var(--color-main-80);pointer-events: none;}
+.option:hover{background: var(--color-main-20);}
+.option:active{background: var(--color-main-20);border-bottom: 1px solid #00000020;}
+.graphic
+{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap:2px;
+}
+.index-box
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+}
+.index-box .index
+{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-top: 1px solid #00000020;
+}
+.index-box .index::before
+{
+    content:attr(index-value);
+    position: absolute;
+    left: -8px;
+    top:0;
+    transform: translate(-100%, -50%);
+    font-size: .6rem;
+}
+
+.month
+{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    background: var(--color-main-20);
+    z-index: 1;
+}
+.month::before
+{
+    content: attr(month-name);
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    bottom: 0;
+    left: 50%;
+    font-size: .65rem;
+    transform: translate(-50%, 25px) rotate(-90deg);
+}

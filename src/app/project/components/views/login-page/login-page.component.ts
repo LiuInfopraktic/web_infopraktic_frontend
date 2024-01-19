@@ -22,9 +22,9 @@ export class LoginPageComponent implements OnInit {
     if(user && password){
       try{
         let response = await this.ALogin.getLogin({user, password}).toPromise();
-        // TODO: save token
         localStorage.setItem('infopraktic-token', response.token);
         btn.classList.remove('loading');
+        // TODO: navigate to correct route
         this.Router.navigate(['/home']);
 
       } catch(error){

@@ -57,9 +57,9 @@ a{text-decoration: none;}
     height: 50%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    border: 1px solid #FFFFFF20;
-    border-top: 2px solid #FFFFFF80;
-    border-left: 2px solid #FFFFFF80;
+    border: 2px solid #FFFFFF20;
+    border-top: 2px solid #FFFFFF90;
+    border-left: 2px solid #FFFFFF90;
     animation: rotate 1s infinite linear;
 }
 

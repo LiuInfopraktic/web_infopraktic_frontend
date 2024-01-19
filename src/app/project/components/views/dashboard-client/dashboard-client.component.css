@@ -1,0 +1,56 @@
+section
+{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.graph-app-container:not(.focus) .graph-app-config { display: none }
+.graph-app-container.focus
+{
+    position: absolute;
+    background: #ECEFF720; 
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.graph-app-container.focus > .graph-app-container-box
+{
+    width: 80%;
+    height: 90%;
+    background: white;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: calc(60% - 2rem) calc(40% + 2rem);
+    overflow: hidden;
+}
+.graph-app-container.focus > .graph-app-container-box > div
+{
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+}
+.graph-app-container.focus > .graph-app-container-box > .graph-app-config
+{
+    padding-right: 0;
+    background: #ECEFF7;
+    border-right: 1px solid #D4D7DE;
+    box-shadow: 0 3px 6px #00000020;
+}
+.graph-app-container.focus > .graph-app-container-box > .graph-app-box
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.graph-app-container.focus .options { display: none !important;}
