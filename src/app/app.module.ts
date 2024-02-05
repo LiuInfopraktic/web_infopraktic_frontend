@@ -12,6 +12,7 @@ import { TicketsComponent } from './project/components/views/tickets/tickets.com
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TicketDetailsComponent } from './project/components/views/ticket-details/ticket-details.component';
+import { TaskListComponent } from './project/components/reusables/dashboard/task-list/task-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TicketDetailsComponent } from './project/components/views/ticket-detail
     HomeWorkerComponent,
     BenefitsBarGraphComponent,
     TicketsComponent,
-    TicketDetailsComponent
+    TicketDetailsComponent,
+    TaskListComponent
   ],
   imports: [
     BrowserModule,
