@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 
 
 export class ALogin {
-    url = 'http://localhost:3000/api/v0.1';
+    CONF = require('../conf.json')
+    url = this.CONF.url;
     constructor(private http: HttpClient){}
 
     requestOptions = this.createHeader();

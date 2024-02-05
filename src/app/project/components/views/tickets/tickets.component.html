@@ -1,0 +1,73 @@
+<section>
+    <header>
+        <div class="logo"></div>
+        <div class="buttons_box">
+            <button class="secondary_btn"><i class="fa-solid fa-rotate"></i></button>
+            <button class="primary_btn" (click)="new_ticket_form_box.classList.remove('hide')">CREAR TICKET</button>
+        </div>
+        
+    </header>
+    <div class="filters-section">
+        <div class="input-box" #flt_inc_name>
+            <label>Titol</label>
+            <input type="text" name="flt-inc-name" #flt_inc_name_input (focus)="this.inputFocus(flt_inc_name, null)" (blur)="this.inputBlur(flt_inc_name,flt_inc_name_input, null)" />
+        </div>
+        <div class="input-box" #flt_inc_emp>
+            <label>Empresa</label>
+            <input type="text" name="flt-inc-empe" #flt_inc_emp_input (focus)="this.inputFocus(flt_inc_emp, null)" (blur)="this.inputBlur(flt_inc_emp,flt_inc_emp_input, null)" />
+        </div>
+        <select>
+            <option>Treballador</option>
+            <option>T1</option>
+            <option>T2</option>
+            <option>T3</option>
+        </select>
+    </div>
+    <div class="table">
+        <div class="header">
+            <p>Client</p>
+            <p>Categoria</p>
+            <p>Subcategoria</p>
+        </div>
+        <ul>
+            <li *ngFor="let ticket of this.ticket_list" (click)="navigate(ticket.id);">
+                <p>{{ticket.customer}}</p>
+                <p>{{ticket.cat}}</p>
+                <p>{{ticket.subcat}}</p>
+            </li>
+        </ul>
+    </div>
+    <!-- new ticket form -->
+    <div class="new_ticket_form_box hide" #new_ticket_form_box>
+        <div class="close" (click)="new_ticket_form_box.classList.add('hide');hideFormError(error_output)">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="new_ticket_form">
+            <form>
+                <input type="text" class="title" placeholder="Titol de la tasca">
+                <div class="inline">
+                    <div class="input-box" #input_box_client>
+                        <label>Client</label>
+                        <input name="input_client" type="text" #input_client (focus)="inputFocus(input_box_client,select_options_customer)" (blur)="inputBlur(input_box_client, input_client, select_options_customer)" (input)="filterCustomer(input_client.value)"/>
+                        <div class="select_options hide" #select_options_customer>
+                            <p *ngFor="let customer of this.filtered_customers" (click)="setClient(select_options_customer, input_client, customer)">{{customer}}</p>
+                        </div>
+                    </div>
+                    <div class="cat select">
+                        <label>Categoria</label>
+                        <div class="cat_option btn_option" #cat1 (click)="setActiveCat('cat_option', cat1)">hardware</div>
+                        <div class="cat_option btn_option" #cat2 (click)="setActiveCat('cat_option', cat2)">software</div>
+                    </div>
+                    <div class="subcat select" *ngIf="cat1.classList.contains('active')">
+                        <label>Subategoria</label>
+                        <div class="subcat_option btn_option" #subcat1 (click)="setActiveCat('subcat_option', subcat1)">Material</div>
+                        <div class="subcat_option btn_option" #subcat2 (click)="setActiveCat('subcat_option', subcat2)">Incidència</div>
+                    </div>
+                </div>
+                <textarea placeholder="Descripció de l'incidència..." #textarea></textarea>
+                <p class="error_output hide" #error_output>abc</p>
+                <button class="primary_btn" #btn (click)="newTicket(btn,input_client.value, textarea.value, error_output)">crear</button>
+            </form>
+        </div>
+    </div>
+</section>

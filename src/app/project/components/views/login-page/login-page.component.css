@@ -54,68 +54,17 @@ section
 }
 .login-form > label.error.show{padding-bottom: 1rem;}
 .login-form > label.error[name='global']{padding-bottom: 0 !important; height: auto; line-height: 20px;}
-.input-box
-{
-    position: relative;
-    width: 80%;
-    height: 50px;
-    border-radius: 5px;
-    background: white;
-    display: flex;
-    margin-top: 1.4rem;
-}
+/* .input-box -> styles.css */
 .input-box.error { border: 1px solid #E43D30 !important;}
 .input-box.error i:not(.show-password){ color: #E43D30 !important;}
-.input-box > label
-{
-    position: absolute;
-    top:50%;
-    left: calc(15% + 5px);
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: #707070;
-    transition: .3s;
-}
-.input-box > i 
-{
-    width: 15%;
-    color: #707070;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: .9rem;
-}
+/* .input-box > label -> styles.css */
+/* .input-box > i -> styles.css */
+
 .input-box > i.show-password { cursor:pointer; border-top-right-radius: 5px; border-bottom-right-radius: 5px; transition: .3s;}
 .input-box > i.show-password:hover { background: var(--color-main-20); }
-.input-box > input 
-{
-    border: none;
-    outline:none;
-    background: transparent;
-    padding: 5px;
-    color: var(--color-main);
-    width: 90%;
-    font-size: 1.1rem;
-}
+/* .input-box > input -> styles.css */
 
-.input-box::before,
-.input-box::after
-{
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    height: 2px;
-    width: 0;
-    background: var(--color-main);
-    transition: .3s;
-}
-.input-box::before{left:50%}
-.input-box::after{right:50%}
 
-.input-box.focus:not(.error)::before,
-.input-box.focus:not(.error)::after{width: 50%;}
-.input-box.focus > label {left: 5px; top:-15px; font-size: .8rem; color: var(--color-main)}
-.input-box.focus > i {color:var(--color-main)}
 
 .login-form > label 
 {

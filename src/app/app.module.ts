@@ -8,6 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardClientComponent } from './project/components/views/dashboard-client/dashboard-client.component';
 import { HomeWorkerComponent } from './project/components/views/home-worker/home-worker.component';
 import { BenefitsBarGraphComponent } from './project/components/reusables/graphics/benefits-bar-graph/benefits-bar-graph.component';
+import { TicketsComponent } from './project/components/views/tickets/tickets.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { TicketDetailsComponent } from './project/components/views/ticket-details/ticket-details.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,16 @@ import { BenefitsBarGraphComponent } from './project/components/reusables/graphi
     LoginPageComponent,
     DashboardClientComponent,
     HomeWorkerComponent,
-    BenefitsBarGraphComponent
+    BenefitsBarGraphComponent,
+    TicketsComponent,
+    TicketDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

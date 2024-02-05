@@ -13,6 +13,8 @@
 {
     --color-main:#322F6B;
     --color-main-20:#322F6B20;
+    --color-main-40:#322F6B40;
+    --color-main-60:#322F6B60;
     --color-main-80:#322F6B80;
     --color-main-dark:#212529;
     --color-main-light: #00A7BC;
@@ -43,13 +45,36 @@ a{text-decoration: none;}
     align-items: center;
     justify-content: center;
 }
+.secondary_btn
+{
+    position: relative;
+    border:none;
+    outline:none;
+    height: 50px;
+    width: 140px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: var(--color-main);
+    font-size: 1.1rem;
+    background: var(--color-main-20);
+    border:2px solid var(--color-main);
+    transition: .2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.secondary_btn i {font-size: 1.2rem; color: var(--color-main);}
 .primary_btn:not(.loading):hover { background: var(--color-main-dark);}
-.primary_btn.loading
+.secondary_btn:not(.loading):hover { background: var(--color-main-40);}
+.primary_btn.loading,
+.secondary_btn.loading
 {
     color: var(--color-main);
     user-select: none;
     pointer-events: none;
 }
+.secondary_btn.loading i { animation: rotate 1s infinite linear; }
 .primary_btn.loading::after
 {
     content: '';
@@ -64,6 +89,70 @@ a{text-decoration: none;}
 }
 
 @keyframes rotate {
-    0%{transform: rotate(360deg);}
+    0%{transform: rotate(-360deg);}
     100%{transform: rotate(0deg);}
 }
+
+
+/***************
+* INPUTS
+***************/
+
+.input-box
+{
+    position: relative;
+    width: 80%;
+    height: 50px;
+    border-radius: 5px;
+    background: white;
+    display: flex;
+    margin-top: 1.4rem;
+}
+.input-box > i 
+{
+    width: 15%;
+    color: #707070;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .9rem;
+}
+.input-box > label
+{
+    position: absolute;
+    top:50%;
+    left: calc(15% + 5px);
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #707070;
+    transition: .3s;
+}
+.input-box > input 
+{
+    border: none;
+    outline:none;
+    background: transparent;
+    padding: 5px;
+    color: var(--color-main);
+    width: 90%;
+    font-size: 1.1rem;
+}
+
+.input-box::before,
+.input-box::after
+{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    height: 2px;
+    width: 0;
+    background: var(--color-main);
+    transition: .3s;
+}
+.input-box::before{left:50%}
+.input-box::after{right:50%}
+
+.input-box.focus:not(.error)::before,
+.input-box.focus:not(.error)::after{width: 50%;}
+.input-box.focus > label {left: 5px; top:-15px; font-size: .8rem; color: var(--color-main)}
+.input-box.focus > i {color:var(--color-main)}

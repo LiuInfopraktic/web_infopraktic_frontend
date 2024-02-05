@@ -7,20 +7,22 @@ import { Observable } from 'rxjs';
 })
 
 
-export class AGraphic {
+export class ATickets {
     CONF = require('../conf.json')
     url = this.CONF.url;
     constructor(private http: HttpClient){}
 
 
-    userGraphics():Observable<any> {
+    getTickets():Observable<any> {
         let token = this.getToken();
         if (!token) token = ''
-        return this.http.get(`${this.url}/users/graphics`, this.createHeader(token));
+        return this.http.get(`${this.url}/tickets`, this.createHeader(token));
     }
 
-    getConfig(graphic:any){
-        console.log(graphic)
+    newTickets(ticket:any):Observable<any> {
+        let token = this.getToken();
+        if (!token) token = ''
+        return this.http.post(`${this.url}/tickets`, ticket, this.createHeader(token));
     }
 
     getToken() { return localStorage.getItem('infopraktic-token'); }
