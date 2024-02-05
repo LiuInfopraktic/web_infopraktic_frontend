@@ -25,7 +25,7 @@ export class LoginPageComponent implements OnInit {
         localStorage.setItem('infopraktic-token', response.token);
         btn.classList.remove('loading');
         // TODO: navigate to correct route
-        this.Router.navigate(['/home']);
+        this.Router.navigate(['/dashboard']);
 
       } catch(error){
         if (error instanceof HttpErrorResponse) {

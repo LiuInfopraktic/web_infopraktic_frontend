@@ -1,0 +1,97 @@
+section
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+section::before
+{
+    content: '';
+    position: absolute;
+    top:0;
+    left:-4rem;
+    height: 100%;
+    width: 1px;
+    background: #00000020;
+}
+
+.content
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.custom_fixatge 
+{
+    position: absolute;
+    top: 50%;
+    left:calc(5px - 4rem);
+    transform: translateY(-50%);
+    height: 30px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 1px solid var(--color-main-60);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .2s;
+}
+.custom_fixatge i {pointer-events: none; color: var(--color-main)}
+.custom_fixatge:hover{background: var(--color-main-20);}
+/* default */
+.content .button-box
+{
+    width: 100%;
+    display: flex;
+    gap:.8rem;
+}
+
+.content .button-box button
+{
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: var(--color-main);
+    color: #f9f9f9;
+    padding: 0 .5rem;
+    cursor: pointer;
+    transition: .2s;
+}
+.content .button-box button.disabled{background: #707070; pointer-events: none;}
+.content .button-box button:not(.disabled):hover{background: var(--color-main-dark);}
+.content p {height: 26px; line-height: 26px; background: #70707020; padding: 0 1rem; border-radius: 5px;}
+
+
+/* custom */
+.value-box
+{
+    position: relative;
+    background: #f9f9f9;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+}
+.value-box label
+{
+    position: absolute;
+    top: -22px;
+    left:0;
+    width: 100%;
+    text-align: center;
+    font-size: .8rem;
+}
+.value-box input
+{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background: none;
+    text-align: center;
+}

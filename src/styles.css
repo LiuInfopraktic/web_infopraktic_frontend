@@ -20,7 +20,7 @@
     --color-main-light: #00A7BC;
     --color-main-light-2: #00A7BC20;
 }
-body{overflow: hidden;}
+body{overflow-x: hidden;}
 a{text-decoration: none;}
 
 

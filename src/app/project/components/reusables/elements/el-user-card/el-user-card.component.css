@@ -1,0 +1,20 @@
+.user-card
+{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    height: 42px;
+    padding: 0 8px;
+    border-radius: 5px;
+    gap:10px;
+    background: #24ABF2;
+    border: 4px solid #0EA1EE;
+    cursor:pointer;
+}
+.user-card:hover{background: #0EA1EE;}
+.user-card p,
+.user-card i
+{
+    pointer-events: none;
+    color: #f9f9f9;
+}

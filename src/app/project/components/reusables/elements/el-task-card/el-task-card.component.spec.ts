@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeWorkerComponent } from './home-worker.component';
+import { ElTaskCardComponent } from './el-task-card.component';
 
-describe('HomeWorkerComponent', () => {
-  let component: HomeWorkerComponent;
-  let fixture: ComponentFixture<HomeWorkerComponent>;
+describe('TaskCardComponent', () => {
+  let component: ElTaskCardComponent;
+  let fixture: ComponentFixture<ElTaskCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeWorkerComponent ]
+      declarations: [ ElTaskCardComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HomeWorkerComponent);
+    fixture = TestBed.createComponent(ElTaskCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,26 @@
+<section>
+    <div class="custom_fixatge" #custom_fixatge (click)="setActive(custom_fixatge)">
+        <i *ngIf="!custom_fixatge.classList.contains('active')" class="fa-solid fa-pencil"></i>
+        <i *ngIf="custom_fixatge.classList.contains('active')" class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="content" *ngIf="this.state == 'default'">
+        <div class="button-box">
+            <button>Entrada</button>
+            <button class="disabled">Sortida</button>
+        </div>
+        <p>{{this.workedTime}}</p>
+    </div>
+    <div class="content" *ngIf="this.state == 'custom'">
+        <div class="button-box">
+            <div class="value-box">
+                <label>Entrada</label>
+                <input type="text" placeholder="00:00">
+            </div>
+            <div class="value-box">
+                <label>Sortida</label>
+                <input type="text" placeholder="00:00">
+            </div>
+        </div>
+        <p>{{this.workedTime}}</p>
+    </div>
+</section>

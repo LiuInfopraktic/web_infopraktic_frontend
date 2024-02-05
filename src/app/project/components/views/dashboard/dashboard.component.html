@@ -1,0 +1,21 @@
+<section>
+    <header>
+        <h1>Benvingut/da {{this.user.user}}</h1>
+    </header>
+    <div class="fixatge-box">
+        <app-dsh-fixatge></app-dsh-fixatge>
+    </div>
+    <nav> <!-- IF ADMIN-->
+        <button class="page-link active" #overview_pageLink (click)="setActive('page-link', overview_pageLink)">Overview</button>
+        <button class="page-link" #actions_pageLink (click)="setActive('page-link', actions_pageLink)">Accions</button>
+    </nav>
+    <div class="dashboard-content">
+        <div class="column">
+            <div class="calendar">
+                <app-dsh-calendar></app-dsh-calendar>
+            </div>
+            <div class="overtime"></div>
+        </div>
+        <div class="column"></div>
+    </div>
+</section>
